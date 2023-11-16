@@ -5,12 +5,12 @@ const scissorsBtn = document.getElementById("scissorsBtn");
 const winLoss = document.getElementById("winLoss");
 const playerPickText = document.getElementById('playerPick');
 const computerPickText = document.getElementById('computerPick');
-const scoreBoard = document.getElementById('scoreBoard');
+const scoreBoardWins = document.getElementById('scoreBoardWins');
+const scoreBoardLosses = document.getElementById('scoreBoardLosses');
 let randomNumber;
 let userPick;
-let winLossCount = [];
-let winCount;
-let lossCount;
+let winCount = 0;
+let lossCount = 0;
 
 rockBtn.addEventListener("click", function (event) {
   event.preventDefault();
@@ -48,10 +48,13 @@ function computerPick() {
   randomNumber = Math.floor(Math.random() * 3) + 1;
 
   if (randomNumber === 1) {
+    computerPickText.innerText = 'Rock'
     console.log("computer rock");
   } else if (randomNumber === 2) {
+    computerPickText.innerText = 'Paper'
     console.log("computer paper");
   } else {
+    computerPickText.innerText = 'Scissors'
     console.log("computer scissors");
   }
 }
@@ -60,8 +63,6 @@ function computerPick() {
 function comparePicks() {
   if (userPick === randomNumber) {
     winLoss.innerText = "Draw";
-    winLossCount.push('draw');
-    scoreBoard.innerText = winLossCount.join(', ');
 
   } else if (
     (userPick === 1 && randomNumber === 3) ||
@@ -69,15 +70,12 @@ function comparePicks() {
     (userPick === 3 && randomNumber === 2))
   {
       winLoss.innerText = "You win";
-      winLossCount.push('win');
-      scoreBoard.innerText = winLossCount.join(', ');
       winCount++;
+      scoreBoardWins.innerText = winCount;
 
     } else {
       winLoss.innerHTML = "Computer wins";
       winLoss.innerText = "You lose";
-      winLossCount.push('lose');
-      scoreBoard.innerText = winLossCount.join(', ');
       lossCount++;
     }
     scoreCounter();
