@@ -82,11 +82,37 @@ function comparePicks() {
 }
 
 function scoreCounter() {
+
   if(winCount === 5) {
-   const buttons = document.querySelectorAll('button');
-   buttons.disables = true;
    winLoss.innerText = 'You win the game!'
+   endGame();
+  } else if(lossCount === 5) {
+    winLoss.innerText  = 'You lose the game!'
+    endGame();
   }
+}
+
+function endGame() {
+  const buttons = document.querySelectorAll('button');
+  buttons.forEach(function(button) {
+    button.disabled = true;
+   });
+
+// Restart game 
+  resetBtn = document.createElement('button');
+  resetBtn.textContent = 'Try Again';
+  document.body.appendChild(resetBtn);
+
+  resetBtn.addEventListener('click', function() {
+    location.reload();
+  });
+
+  document.addEventListener('keydown', function(event) {
+    if(event.key === 'Enter') {
+      location.reload();
+    }
+  })
+
 }
 
 // function youLose() {
