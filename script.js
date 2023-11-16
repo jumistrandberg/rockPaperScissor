@@ -3,6 +3,8 @@ const rockBtn = document.getElementById("rockBtn");
 const paperBtn = document.getElementById("paperBtn");
 const scissorsBtn = document.getElementById("scissorsBtn");
 const winLoss = document.getElementById("winLoss");
+const playerPickText = document.getElementById('playerPick');
+const computerPickText = document.getElementById('computerPick');
 const scoreBoard = document.getElementById('scoreBoard');
 let randomNumber;
 let userPick;
@@ -14,6 +16,7 @@ rockBtn.addEventListener("click", function (event) {
   event.preventDefault();
 
   userPick = 1;
+  playerPickText.innerText = 'Rock'
   console.log("rock");
   computerPick();
   comparePicks();
@@ -23,6 +26,7 @@ paperBtn.addEventListener("click", function (event) {
   event.preventDefault();
 
   userPick = 2;
+  playerPickText.innerText = 'Paper'
   console.log("paper");
   computerPick();
   comparePicks();
@@ -32,6 +36,7 @@ scissorsBtn.addEventListener("click", function (event) {
   event.preventDefault();
 
   userPick = 3;
+  playerPickText.innerText = 'Scissors'
   console.log("scissors");
   computerPick();
   comparePicks();
@@ -80,6 +85,31 @@ function comparePicks() {
 
 function scoreCounter() {
   if(winCount === 5) {
-   
+   const buttons = document.querySelectorAll('button');
+   buttons.disables = true;
+   winLoss.innerText = 'You win the game!'
   }
 }
+
+// function youLose() {
+//   feedback.innerHTML = "Loser LOSER!!!";
+//   guessInput.disabled = true;
+//   guessBtn.disabled = true;
+//   formText.innerText= '';
+
+//   //Restart game 
+//   resetBtn = document.createElement('button');
+//   resetBtn.textContent = 'Try Again';
+//   document.body.appendChild(resetBtn);
+
+//   resetBtn.addEventListener('click', function() {
+//     location.reload();
+//   });
+
+//   document.addEventListener('keydown', function(event) {
+//     if(event.key === 'Enter') {
+//         location.reload();
+//     };
+//   })
+// }; 
+
