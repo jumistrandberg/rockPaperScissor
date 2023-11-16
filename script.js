@@ -115,25 +115,3 @@ function endGame() {
 
 }
 
-// function youLose() {
-//   feedback.innerHTML = "Loser LOSER!!!";
-//   guessInput.disabled = true;
-//   guessBtn.disabled = true;
-//   formText.innerText= '';
-
-//   //Restart game 
-//   resetBtn = document.createElement('button');
-//   resetBtn.textContent = 'Try Again';
-//   document.body.appendChild(resetBtn);
-
-//   resetBtn.addEventListener('click', function() {
-//     location.reload();
-//   });
-
-//   document.addEventListener('keydown', function(event) {
-//     if(event.key === 'Enter') {
-//         location.reload();
-//     };
-//   })
-// }; 
-
