@@ -74,9 +74,9 @@ function comparePicks() {
       scoreBoardWins.innerText = winCount;
 
     } else {
-      winLoss.innerHTML = "Computer wins";
       winLoss.innerText = "You lose";
       lossCount++;
+      scoreBoardLosses.innerText = lossCount;
     }
     scoreCounter();
 }
