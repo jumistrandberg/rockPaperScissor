@@ -5,6 +5,9 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    max-height: 100vh;
+    overflow: hidden;
+
 }
 
 main {
@@ -23,23 +26,25 @@ form {
 }
 
 form > * {
- margin: 10% 0;
+ margin: 5% 0;
 } 
 
 button {
     text-transform: uppercase;
     width: 50%;
-    margin: 5%;
-    padding: 5%;
+    padding: 1rem;
+    margin: 0.5rem;
     border-radius: 1rem;
     color: white;
     background-color: black;
     letter-spacing: 0.1rem;
+    border: none;
 }
 
 button:hover {
-    color: turquoise;
-    border: 3px solid turquoise;
+    border: none;
+    color: black;
+    background-color: white;
 }
 
 #rockBtn {
@@ -48,6 +53,7 @@ button:hover {
 
 #rockBtn:hover {
     background-color: blue;
+    color: white;
 }
 
 #paperBtn {
@@ -64,6 +70,6 @@ button:hover {
 }
 
 #scissorsBtn:hover {
-    background-color: 
-    
-
+    background-color: red;
+    color: black;
+}
